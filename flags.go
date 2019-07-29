@@ -69,6 +69,25 @@ func AddFlags(fs *flag.FlagSet, defaults *Config) error {
 	return nil
 }
 
+// Flags creates a new Go stdlib flag.FlagSet and returns it. This promotes
+// easier interop with other flag libraries that don't easily expose the
+// underlying flag.FlagSet.
+func Flags() *flag.FlagSet {
+	f := new(flag.FlagSet)
+	_ = AddFlags(f, nil)
+	return f
+}
+
+// FlagsWithDefaults mimics Flags above, but allows for passing in default
+// config values.
+func FlagsWithDefaults(defaults *Config) (*flag.FlagSet, error) {
+	f := new(flag.FlagSet)
+	if err := AddFlags(f, defaults); err != nil {
+		return nil, err
+	}
+	return f, nil
+}
+
 // Config struct provides an alternative way to configure this lib.
 // Callers must call the Set() method once defining the values.
 type Config struct {
