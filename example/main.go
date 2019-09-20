@@ -18,7 +18,7 @@ package main
 import (
 	"os"
 
-	"libfb/go/flog"
+	"github.com/facebookincubator/flog"
 )
 
 func main() {
