@@ -1,4 +1,7 @@
 # flog
+[![Build Status](https://travis-ci.org/facebookincubator/flog.svg?branch=master)](https://travis-ci.org/facebookincubator/flog)
+[![GoDoc](https://godoc.org/github.com/facebookincubator/flog?status.svg)](https://godoc.org/github.com/facebookincubator/flog)
+
 Flog is a hacked and slashed version of glog that can be used as a drop in
 replacement for the latter.
 
